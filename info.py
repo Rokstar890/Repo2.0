@@ -58,7 +58,7 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 VERIFY = bool(environ.get('VERIFY', False))
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'Linksmoney.in')
 SHORTLINK_API = environ.get('SHORTLINK_API', '9c1e1fed194419e8e912c4084cf99de0eccfb408')
-IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
+IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "5")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
@@ -103,8 +103,8 @@ else:
     ON_HEROKU = False
 BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
 FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
-URL = "https://{}/".format(FQDN) if ON_HEROKU or NO_PORT else \
-    "https://{}/".format(FQDN, PORT)
+URL = "https://netflixnewvot-06efeae6d16a.herokuapp.com/".format(FQDN) if ON_HEROKU or NO_PORT else \
+    "https://netflixnewvot-06efeae6d16a.herokuapp.com/".format(FQDN, PORT)
 SLEEP_THRESHOLD = int(environ.get('SLEEP_THRESHOLD', '60'))
 WORKERS = int(environ.get('WORKERS', '4'))
 SESSION_NAME = str(environ.get('SESSION_NAME', 'LazyBot'))
@@ -119,9 +119,9 @@ else:
     ON_HEROKU = False
 HAS_SSL=bool(getenv('HAS_SSL',True))
 if HAS_SSL:
-    URL = "https://{}/".format(FQDN)
+    URL = "https://netflixnewvot-06efeae6d16a.herokuapp.com/".format(FQDN)
 else:
-    URL = "http://{}/".format(FQDN)
+    URL = "https://netflixnewvot-06efeae6d16a.herokuapp.com/".format(FQDN)
 
 # add premium logs channel id
 PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', ''))
